@@ -1,0 +1,16 @@
+
+EnergyOps AI - Solar Inverter Troubleshooting
+
+A solar inverter converts electricity produced by solar panels into electricity suitable for household use.
+
+Common inverter problems include:
+- Inverter not producing electricity.
+- Inverter displaying an error message.
+- Inverter losing monitoring connectivity.
+- Unexpected shutdowns.
+
+If an inverter is not working, customers can check the monitoring application for error messages and report the error code to technical support.
+
+Customers must not open the inverter or attempt electrical repairs themselves.
+
+If there is smoke, fire, sparking, a burning smell, or suspected electric shock, customers must stay clear of the equipment and seek appropriate emergency or qualified professional assistance.

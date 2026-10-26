@@ -1,0 +1,15 @@
+
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+.env
+.env.*
+chroma_db/
+*.db
+*.db-shm
+*.db-wal
+.vscode/
+.idea/

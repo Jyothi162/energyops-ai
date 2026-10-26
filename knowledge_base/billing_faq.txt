@@ -1,0 +1,12 @@
+
+EnergyOps AI - Billing FAQ
+
+Customers may contact billing support for questions about invoices, payment status, payment dates, and billing corrections.
+
+If a customer believes an invoice is incorrect, the billing team should review the invoice and account information.
+
+Customers should provide their customer ID and invoice reference when contacting billing support.
+
+The AI assistant must not claim that a payment has been received or an invoice has been corrected unless this information has been verified through an authorized billing system.
+
+Billing disputes that cannot be resolved automatically should be referred to a human support representative.

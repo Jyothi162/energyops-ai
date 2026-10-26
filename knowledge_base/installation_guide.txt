@@ -1,0 +1,13 @@
+
+EnergyOps AI - Solar Installation Guide
+
+Customers can check their solar installation status using their customer ID.
+
+Installation statuses include:
+- Scheduled: Installation is planned for a future date.
+- Delayed: Installation has been postponed.
+- Completed: Installation has been finished.
+
+If an installation is delayed, the customer should contact the installation support team for an updated schedule.
+
+Customers should not attempt to install or modify solar electrical equipment themselves. Installation work must be performed by qualified professionals.
