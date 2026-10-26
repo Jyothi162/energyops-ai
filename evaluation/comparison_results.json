@@ -1,0 +1,140 @@
+{
+  "semantic": {
+    "method": "Semantic",
+    "total_cases": 5,
+    "completed_cases": 5,
+    "hit_rate_at_2": 0.8,
+    "mrr": 0.8666666666666666,
+    "results": [
+      {
+        "question": "Why is the amount on my solar power statement higher than expected?",
+        "expected": "billing_faq.txt",
+        "retrieved": [
+          "installation_guide.txt",
+          "inverter_troubleshooting.txt",
+          "billing_faq.txt"
+        ],
+        "hit_at_2": false,
+        "rank": 3,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "question": "How do I get help with a payment discrepancy?",
+        "expected": "billing_faq.txt",
+        "retrieved": [
+          "billing_faq.txt",
+          "inverter_troubleshooting.txt",
+          "installation_guide.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What should I do if my inverter keeps shutting down?",
+        "expected": "inverter_troubleshooting.txt",
+        "retrieved": [
+          "inverter_troubleshooting.txt",
+          "installation_guide.txt",
+          "billing_faq.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How can I check whether my solar panel installation is delayed?",
+        "expected": "installation_guide.txt",
+        "retrieved": [
+          "installation_guide.txt",
+          "inverter_troubleshooting.txt",
+          "billing_faq.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Who should I contact if my solar equipment shows an error code?",
+        "expected": "inverter_troubleshooting.txt",
+        "retrieved": [
+          "inverter_troubleshooting.txt",
+          "installation_guide.txt",
+          "billing_faq.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  "hybrid": {
+    "method": "Hybrid",
+    "total_cases": 5,
+    "completed_cases": 5,
+    "hit_rate_at_2": 1.0,
+    "mrr": 1.0,
+    "results": [
+      {
+        "question": "Why is the amount on my solar power statement higher than expected?",
+        "expected": "billing_faq.txt",
+        "retrieved": [
+          "billing_faq.txt",
+          "installation_guide.txt",
+          "inverter_troubleshooting.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How do I get help with a payment discrepancy?",
+        "expected": "billing_faq.txt",
+        "retrieved": [
+          "billing_faq.txt",
+          "inverter_troubleshooting.txt",
+          "installation_guide.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "What should I do if my inverter keeps shutting down?",
+        "expected": "inverter_troubleshooting.txt",
+        "retrieved": [
+          "inverter_troubleshooting.txt",
+          "billing_faq.txt",
+          "installation_guide.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "How can I check whether my solar panel installation is delayed?",
+        "expected": "installation_guide.txt",
+        "retrieved": [
+          "installation_guide.txt",
+          "billing_faq.txt",
+          "inverter_troubleshooting.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "question": "Who should I contact if my solar equipment shows an error code?",
+        "expected": "inverter_troubleshooting.txt",
+        "retrieved": [
+          "inverter_troubleshooting.txt",
+          "billing_faq.txt",
+          "installation_guide.txt"
+        ],
+        "hit_at_2": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  }
+}

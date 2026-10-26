@@ -52,6 +52,69 @@ EnergyOps AI was evaluated on 10 manually labeled customer-support scenarios cov
 | Request classification accuracy | 100% (10/10) |
 | Routing accuracy | 100% (10/10) |
 
+## Retrieval Evaluation: Semantic vs Hybrid Search
+
+EnergyOps AI compares semantic vector search with hybrid
+retrieval combining semantic similarity, keyword matching
+(BM25), and Reciprocal Rank Fusion (RRF).
+
+Both methods were evaluated on the same five solar-energy
+customer-support questions.
+
+| Metric | Semantic | Hybrid |
+|---|---:|---:|
+| Questions evaluated | 5 | 5 |
+| Completed evaluations | 5 | 5 |
+| Source Hit Rate@2 | 80% | 100% |
+| Mean Reciprocal Rank (MRR) | 0.867 | 1.000 |
+
+### Findings
+
+- Hybrid retrieval improved Source Hit Rate@2 by 20 percentage points.
+- Hybrid retrieval ranked the expected document first for all five questions.
+- The evaluation demonstrates the benefit of combining keyword and semantic retrieval for this small knowledge base.
+
+### Reproduce the Evaluation
+
+Run:
+
+```bash
+python evaluation/compare_retrievers.py
+```
+
+Detailed results are saved in:
+
+`evaluation/comparison_results.json`
+
+**Limitation:** The benchmark contains five questions and three
+support documents. Results are specific to this prototype and
+should not be interpreted as production-level accuracy.
+
+
+### RAG Retrieval Improvement
+
+EnergyOps AI was evaluated using 9 manually labeled
+solar customer-support questions.
+
+Initial Source Hit Rate@2: 77.78% (7/9)
+
+Investigation identified two billing-related questions
+where the expected billing FAQ document ranked third.
+
+Improvement:
+- Inspected ChromaDB document rankings.
+- Identified gaps in billing FAQ coverage.
+- Added relevant billing question-and-answer content.
+- Regenerated document embeddings.
+- Repeated the retrieval evaluation.
+
+Updated Source Hit Rate@2: 100% (9/9)
+
+Limitation:
+These results are based on a small evaluation dataset.
+Additional unseen questions are required to assess
+retrieval generalization.
+
 ### Evaluation Methodology
 
 - Model: Llama 3.2 running locally through Ollama

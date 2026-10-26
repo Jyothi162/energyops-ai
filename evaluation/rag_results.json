@@ -1,0 +1,108 @@
+{
+  "metric": "Source Hit Rate@2",
+  "total_cases": 9,
+  "completed_cases": 9,
+  "correct_cases": 9,
+  "source_hit_rate_percent": 100.0,
+  "results": [
+    {
+      "id": 1,
+      "question": "What should I do if my solar inverter stops working?",
+      "expected_source": "inverter_troubleshooting.txt",
+      "retrieved_sources": [
+        "inverter_troubleshooting.txt",
+        "installation_guide.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 2,
+      "question": "How can I troubleshoot an inverter that is not producing power?",
+      "expected_source": "inverter_troubleshooting.txt",
+      "retrieved_sources": [
+        "inverter_troubleshooting.txt",
+        "billing_faq.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 3,
+      "question": "What are the steps involved in installing solar panels?",
+      "expected_source": "installation_guide.txt",
+      "retrieved_sources": [
+        "installation_guide.txt",
+        "inverter_troubleshooting.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 4,
+      "question": "What happens during the solar installation process?",
+      "expected_source": "installation_guide.txt",
+      "retrieved_sources": [
+        "installation_guide.txt",
+        "inverter_troubleshooting.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 5,
+      "question": "How can I understand the charges on my solar electricity bill?",
+      "expected_source": "billing_faq.txt",
+      "retrieved_sources": [
+        "billing_faq.txt",
+        "inverter_troubleshooting.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 6,
+      "question": "What should I do if my billing amount looks incorrect?",
+      "expected_source": "billing_faq.txt",
+      "retrieved_sources": [
+        "billing_faq.txt",
+        "inverter_troubleshooting.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 7,
+      "question": "My inverter is showing an error and has stopped generating electricity.",
+      "expected_source": "inverter_troubleshooting.txt",
+      "retrieved_sources": [
+        "inverter_troubleshooting.txt",
+        "billing_faq.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 8,
+      "question": "What should I prepare before the solar installation team arrives?",
+      "expected_source": "installation_guide.txt",
+      "retrieved_sources": [
+        "installation_guide.txt",
+        "inverter_troubleshooting.txt"
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": 9,
+      "question": "Where can I find information about my solar energy invoice?",
+      "expected_source": "billing_faq.txt",
+      "retrieved_sources": [
+        "installation_guide.txt",
+        "billing_faq.txt"
+      ],
+      "passed": true,
+      "error": null
+    }
+  ]
+}

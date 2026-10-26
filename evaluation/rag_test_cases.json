@@ -1,0 +1,48 @@
+
+[
+  {
+    "id": 1,
+    "question": "What should I do if my solar inverter stops working?",
+    "expected_source": "inverter_troubleshooting.txt"
+  },
+  {
+    "id": 2,
+    "question": "How can I troubleshoot an inverter that is not producing power?",
+    "expected_source": "inverter_troubleshooting.txt"
+  },
+  {
+    "id": 3,
+    "question": "What are the steps involved in installing solar panels?",
+    "expected_source": "installation_guide.txt"
+  },
+  {
+    "id": 4,
+    "question": "What happens during the solar installation process?",
+    "expected_source": "installation_guide.txt"
+  },
+  {
+    "id": 5,
+    "question": "How can I understand the charges on my solar electricity bill?",
+    "expected_source": "billing_faq.txt"
+  },
+  {
+    "id": 6,
+    "question": "What should I do if my billing amount looks incorrect?",
+    "expected_source": "billing_faq.txt"
+  },
+  {
+    "id": 7,
+    "question": "My inverter is showing an error and has stopped generating electricity.",
+    "expected_source": "inverter_troubleshooting.txt"
+  },
+  {
+    "id": 8,
+    "question": "What should I prepare before the solar installation team arrives?",
+    "expected_source": "installation_guide.txt"
+  },
+  {
+    "id": 9,
+    "question": "Where can I find information about my solar energy invoice?",
+    "expected_source": "billing_faq.txt"
+  }
+]
