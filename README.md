@@ -23,6 +23,10 @@ The application uses fictional customer records and demonstration documents.
 - **Web Interface:** Provides a Streamlit customer-support dashboard.
 - **Docker Deployment:** Runs FastAPI and Streamlit using Docker Compose.
 
+## System Architecture
+
+See the [architecture diagram](docs/architecture.md).
+
 ## Technology Stack
 
 | Component | Technology |
