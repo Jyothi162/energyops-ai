@@ -41,6 +41,34 @@ See the [architecture diagram](docs/architecture.md).
 | Containerization | Docker and Docker Compose |
 | Testing | pytest |
 
+## AI Evaluation Results
+
+EnergyOps AI was evaluated on 10 manually labeled customer-support scenarios covering installation, billing, technical support, appointments, and electrical safety.
+
+| Metric | Result |
+|---|---|
+| Test cases | 10 |
+| Completed evaluations | 10 |
+| Request classification accuracy | 100% (10/10) |
+| Routing accuracy | 100% (10/10) |
+
+### Evaluation Methodology
+
+- Model: Llama 3.2 running locally through Ollama
+- Classification: Structured output validated with Pydantic
+- Routing: Application routing rules
+- Dataset: `evaluation/test_cases.json`
+- Evaluation script: `evaluation/evaluate.py`
+
+**Limitations:** These results come from a small, manually curated dataset. They do not establish production reliability or measure retrieval quality, end-to-end agent execution, or human-approval enforcement.
+
+To reproduce the evaluation:
+
+```powershell
+python evaluation/evaluate.py
+```
+
+
 ## System Architecture
 
 ```text

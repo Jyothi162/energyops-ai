@@ -1,0 +1,63 @@
+
+[
+  {
+    "id": 1,
+    "message": "What is my solar installation status?",
+    "expected_category": "installation",
+    "expected_action": "check_installation_status"
+  },
+  {
+    "id": 2,
+    "message": "My solar panel installation has been delayed.",
+    "expected_category": "installation",
+    "expected_action": "check_installation_status"
+  },
+  {
+    "id": 3,
+    "message": "I was charged twice on my electricity bill.",
+    "expected_category": "billing",
+    "expected_action": "review_billing"
+  },
+  {
+    "id": 4,
+    "message": "There is an incorrect amount on my invoice.",
+    "expected_category": "billing",
+    "expected_action": "review_billing"
+  },
+  {
+    "id": 5,
+    "message": "My solar inverter is not working properly.",
+    "expected_category": "technical_support",
+    "expected_action": "create_support_ticket"
+  },
+  {
+    "id": 6,
+    "message": "My solar monitoring system stopped working.",
+    "expected_category": "technical_support",
+    "expected_action": "create_support_ticket"
+  },
+  {
+    "id": 7,
+    "message": "My solar inverter is sparking and smoking.",
+    "expected_category": "technical_support",
+    "expected_action": "human_review"
+  },
+  {
+    "id": 8,
+    "message": "There is a burning smell near my solar battery.",
+    "expected_category": "technical_support",
+    "expected_action": "human_review"
+  },
+  {
+    "id": 9,
+    "message": "Can I change my installation appointment?",
+    "expected_category": "appointment",
+    "expected_action": "check_appointment"
+  },
+  {
+    "id": 10,
+    "message": "What time is my technician appointment?",
+    "expected_category": "appointment",
+    "expected_action": "check_appointment"
+  }
+]
