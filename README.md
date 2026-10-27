@@ -38,6 +38,7 @@ See the [architecture diagram](docs/architecture.md).
 | Backend | FastAPI |
 | Frontend | Streamlit |
 | Database | SQLite |
+| Security evaluation | pytest, prompt-injection test scenarios |
 | Containerization | Docker and Docker Compose |
 | Testing | pytest |
 
@@ -173,6 +174,7 @@ LangGraph AI Agent
 
 ```text
 energyops-ai/
+│
 ├── agent.py
 ├── api.py
 ├── app.py
@@ -204,6 +206,12 @@ energyops-ai/
 │   ├── answer_results.json
 │   └── comparison_results.json
 │
+├── security_tests/
+│   ├── test_prompt_injection.py
+│   ├── evaluate_security.py
+│   ├── baseline_results.txt
+│   └── security_results.json
+│
 ├── tests/
 │   └── test_routing.py
 │
@@ -213,6 +221,7 @@ energyops-ai/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+
 ```
 
 ## Getting Started
@@ -365,13 +374,46 @@ EnergyOps AI is an educational portfolio prototype, not a production customer-su
 - The application requires a locally accessible Ollama service.
 
 
+## Prompt-Injection Baseline Evaluation
+
+EnergyOps AI was evaluated against five controlled
+prompt-injection scenarios embedded in retrieved documents.
+
+| Metric | Result |
+|---|---|
+| Attack scenarios | 5 |
+| Observed attack success rate | 0% (0/5) |
+| Legitimate-task success rate | 100% (5/5) |
+
+The evaluation included direct instruction injection,
+fake system messages, administrator impersonation,
+safety-override instructions, and citation manipulation.
+
+Attack success was measured by whether the model included
+a specified attacker-controlled phrase in its response.
+Legitimate-task success used a simple keyword-based check.
+
+These results are limited to one customer question and
+five controlled scenarios. They do not establish
+comprehensive resistance to prompt injection.
+
+### Reproduce the Evaluation
+
+```powershell
+python -m pytest security_tests/test_prompt_injection.py -v -s
+python -m security_tests.evaluate_security
+```
+
+Results are saved in `security_tests/security_results.json`.
+
+
 
 ## Future Improvements
 
 - Authentication and role-based access control
 - Expanded end-to-end API integration and security testing
 - Automated RAG answer-faithfulness scoring and citation verification
-- Prompt-injection and access-control security evaluation
+- Expanded adversarial prompt-injection testing and role-based access-control evaluation
 - Monitoring and structured logging
 - Improved safety classification and escalation policies
 - Cloud deployment
