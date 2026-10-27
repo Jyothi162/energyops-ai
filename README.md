@@ -34,7 +34,7 @@ See the [architecture diagram](docs/architecture.md).
 | Programming language | Python |
 | Large language model | Llama 3.2 via Ollama |
 | AI orchestration | LangGraph |
-| Retrieval-Augmented Generation | ChromaDB and Ollama embeddings |
+| Retrieval-Augmented Generation | ChromaDB, Ollama embeddings, BM25, Hybrid Search, RRF |
 | Backend | FastAPI |
 | Frontend | Streamlit |
 | Database | SQLite |
@@ -123,7 +123,9 @@ retrieval generalization.
 - Dataset: `evaluation/test_cases.json`
 - Evaluation script: `evaluation/evaluate.py`
 
-**Limitations:** These results come from a small, manually curated dataset. They do not establish production reliability or measure retrieval quality, end-to-end agent execution, or human-approval enforcement.
+
+**Limitations:** The classification and routing results come from a small, manually curated dataset. These metrics do not establish production reliability. Retrieval quality and selected human-approval behaviors are evaluated separately in the sections below.
+
 
 To reproduce the evaluation:
 
@@ -132,7 +134,7 @@ python evaluation/evaluate.py
 ```
 
 
-## System Architecture
+## Workflow Overview
 
 ```text
 Customer
@@ -166,6 +168,7 @@ LangGraph AI Agent
    +---- Safety Issue -----------> Human Review
 ```
 
+
 ## Project Structure
 
 ```text
@@ -178,21 +181,37 @@ energyops-ai/
 ├── schemas.py
 ├── startup.py
 ├── main.py
+│
 ├── rag/
 │   ├── __init__.py
 │   ├── ingest.py
 │   ├── retriever.py
+│   ├── hybrid_retriever.py
 │   └── rag_chain.py
+│
 ├── knowledge_base/
 │   ├── billing_faq.txt
 │   ├── installation_guide.txt
 │   └── inverter_troubleshooting.txt
+│
+├── evaluation/
+│   ├── evaluate.py
+│   ├── evaluate_answers.py
+│   ├── compare_retrievers.py
+│   ├── test_safety.py
+│   ├── test_human_approval.py
+│   ├── test_cases.json
+│   ├── answer_results.json
+│   └── comparison_results.json
+│
 ├── tests/
 │   └── test_routing.py
+│
 ├── Dockerfile
 ├── compose.yaml
 ├── .dockerignore
 ├── .gitignore
+├── README.md
 └── requirements.txt
 ```
 
@@ -208,11 +227,10 @@ energyops-ai/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/energyops-ai.git
+git clone https://github.com/Jyothi162/energyops-ai.git
 cd energyops-ai
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 2. Download Ollama Models
 
@@ -285,15 +303,56 @@ The agent identifies a potentially dangerous situation and routes the request fo
 
 The agent proposes a support ticket. The user must approve the action before the ticket is created in SQLite.
 
+
 ## Running Tests
 
-Install the Python dependencies and run:
+Run the routing, safety, and human-approval tests:
+
+```bash
+python -m pytest tests/ evaluation/test_safety.py evaluation/test_human_approval.py -v
+```
+
+The safety and human-approval test files were verified
+together with 10 passing tests.
+
+Routing tests can be run separately:
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-The current automated test suite covers key routing scenarios. Additional integration and security testing are future improvements.
+
+
+## Safety and Human-in-the-Loop Testing
+
+EnergyOps AI uses pytest to validate electrical hazard
+escalation and human-controlled support ticket creation.
+
+### Automated Test Results
+
+| Test Category | Passed |
+|---|---:|
+| Electrical hazard escalation | 5/5 |
+| Normal request handling | 1/1 |
+| Pending approval | 1/1 |
+| Approved ticket creation | 1/1 |
+| Rejected ticket creation | 1/1 |
+| Unsafe ticket blocked after approval | 1/1 |
+| **Total** | **10/10** |
+
+### Run Safety and Approval Tests
+
+```bash
+python -m pytest evaluation/test_safety.py evaluation/test_human_approval.py -v
+```
+
+**Result:** 10 tests passed.
+
+Approval tests use mocked database writes and isolated
+LangGraph checkpointers. These tests validate selected
+workflow behaviors, not comprehensive production security.
+
+
 
 ## Safety and Limitations
 
@@ -305,15 +364,19 @@ EnergyOps AI is an educational portfolio prototype, not a production customer-su
 - Authentication, authorization, and production-grade security controls are not yet implemented.
 - The application requires a locally accessible Ollama service.
 
+
+
 ## Future Improvements
 
 - Authentication and role-based access control
-- Expanded automated integration testing
-- RAG quality evaluation and citation verification
+- Expanded end-to-end API integration and security testing
+- Automated RAG answer-faithfulness scoring and citation verification
+- Prompt-injection and access-control security evaluation
 - Monitoring and structured logging
 - Improved safety classification and escalation policies
 - Cloud deployment
 - Integration with real customer-support platforms
+
 
 ## Project Purpose
 
