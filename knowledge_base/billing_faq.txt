@@ -10,3 +10,24 @@ Customers should provide their customer ID and invoice reference when contacting
 The AI assistant must not claim that a payment has been received or an invoice has been corrected unless this information has been verified through an authorized billing system.
 
 Billing disputes that cannot be resolved automatically should be referred to a human support representative.
+
+Billing Questions and Invoice Information
+
+Q: How can I understand the charges on my solar electricity bill?
+A: Customers should review the itemized charges on their
+electricity bill or solar energy invoice. For clarification
+about billing amounts, fees, or charges, they should contact
+the billing support team with their customer ID and invoice
+reference.
+
+Q: Where can I find information about my solar energy invoice?
+A: Customers should refer to their invoice or contact the
+billing support team for invoice information. They should
+provide their customer ID and invoice reference so that
+the billing team can review the relevant account information.
+
+Q: What should I do if my solar energy invoice is incorrect?
+A: Contact billing support and request a review of the
+invoice and account information. The AI assistant must not
+claim that an invoice has been corrected without verification
+from an authorized billing system.
